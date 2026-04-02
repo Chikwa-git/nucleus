@@ -13,10 +13,10 @@ Aplicação web Flask que permite fazer upload de documentos (PDF ou TXT) e gera
 
 ## 🚀 Instalação
 
-### 1. Clone o repositório ou navegue até a pasta do projeto
-
+### 1. Clone o repositório
 ```bash
-cd /home/linc/nucleus
+git clone https://github.com/Chikwa-git/nucleus.git
+cd nucleus
 ```
 
 ### 2. Crie e ative o ambiente virtual
@@ -92,7 +92,9 @@ nucleus/
 - **PyPDF2** - Extração de texto de PDFs
 - **python-dotenv** - Gerenciamento de variáveis de ambiente
 - **requests** - Chamadas HTTP para APIs
-- **google-generativeai** - SDK do Google Gemini
+- **google-genai** - SDK do Google Gemini
+- **groq** - SDK do Groq (Llama 3.3)
+- **openai** - SDK da OpenAI (ChatGPT)
 
 ## 🔒 Segurança
 
