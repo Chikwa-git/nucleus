@@ -1,122 +1,118 @@
-# 🧠 Nucleus - Resumidor de Documentos com IA
+# 🧠 Nucleus - AI-Powered Document Summarizer
 
-Aplicação web Flask que permite fazer upload de documentos (PDF ou TXT) e gerar resumos usando IA (Groq/Llama ou Google Gemini).
+Flask web application that allows users to upload documents (PDF or TXT) and generate summaries using AI.
 
-## 📋 Funcionalidades
+## 📋 Features
 
-- ✅ Upload de documentos PDF e TXT
-- ✅ Três tipos de resumo: Curto, Detalhado e Bullet Points
-- ✅ Três opções de IA: Groq (Llama 3.3), Google Gemini e OpenAI (ChatGPT)
-- ✅ Interface limpa e responsiva
-- ✅ Processamento em tempo real
-- ✅ Suporte a formatação Markdown nos resumos
+- ✅ PDF and TXT file upload
+- ✅ Three summary types: Short, Detailed, and Bullet Points
+- ✅ Three AI options: Groq (Llama 3.3), Google Gemini, and OpenAI (ChatGPT)
+- ✅ Clean and responsive interface
+- ✅ Real-time processing
+- ✅ Markdown formatting support in summaries
 
-## 🚀 Instalação
+## 🚀 Installation
 
-### 1. Clone o repositório
+### 1. Clone the repository
 ```bash
 git clone https://github.com/Chikwa-git/nucleus.git
 cd nucleus
 ```
 
-### 2. Crie e ative o ambiente virtual
-
+### 2. Create and activate the virtual environment
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # No Linux/Mac
-# ou
-venv\Scripts\activate  # No Windows
+source venv/bin/activate  # Linux/Mac
+# or
+venv\Scripts\activate  # Windows
 ```
 
-### 3. Instale as dependências
-
+### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure as chaves de API
+### 4. Configure API keys
 
-Edite o arquivo `.env` e adicione suas chaves de API:
-
+Edit the `.env` file and add your API keys:
 ```env
-GROQ_API_KEY=sua_chave_groq_aqui
-GEMINI_API_KEY=sua_chave_gemini_aqui
+GROQ_API_KEY=your_groq_key_here
+GEMINI_API_KEY=your_gemini_key_here
+OPENAI_API_KEY=your_openai_key_here
 ```
 
-**Onde obter as chaves:**
+**Where to get the keys:**
 - Groq: https://console.groq.com/keys
 - Gemini: https://makersuite.google.com/app/apikey
 - OpenAI: https://platform.openai.com/api-keys
 
-### 5. Execute a aplicação
+### 5. Run the application
 
-**Opção 1: Usando o script run.sh**
+**Option 1: Using the run.sh script**
 ```bash
 ./run.sh
 ```
 
-**Opção 2: Manualmente**
+**Option 2: Manually**
 ```bash
-source venv/bin/activate  # Ative o ambiente virtual primeiro
+source venv/bin/activate
 python app.py
 ```
 
-A aplicação estará disponível em: http://localhost:5000
+The application will be available at: http://localhost:5000
 
-## 📖 Como Usar
+## 📖 How to Use
 
-1. Acesse http://localhost:5000 no navegador
-2. Selecione um arquivo PDF ou TXT
-3. Escolha o tipo de resumo desejado
-4. Selecione a IA (Groq ou Gemini)
-5. Clique em "Gerar Resumo"
-6. Aguarde o processamento e veja o resultado
+1. Open http://localhost:5000 in your browser
+2. Select a PDF or TXT file
+3. Choose the summary type
+4. Select the AI provider (Groq, Gemini, or OpenAI)
+5. Click "Generate Summary"
+6. Wait for processing and view the result
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
-```
 nucleus/
-├── app.py                 # Lógica principal Flask
+├── app.py                 # Main Flask logic
 ├── templates/
-│   └── index.html        # Interface do usuário
-├── static/               # Arquivos estáticos (criado automaticamente)
-├── uploads/              # Pasta temporária para uploads (criada automaticamente)
-├── .env                  # Chaves de API (não commitar!)
-├── requirements.txt      # Dependências Python
-└── README.md            # Este arquivo
-```
+│   └── index.html        # User interface
+├── static/               # Static files (auto-created)
+├── uploads/              # Temporary upload folder (auto-created)
+├── .env                  # API keys (do not commit!)
+├── requirements.txt      # Python dependencies
+└── README.md             # This file
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tech Stack
 
-- **Flask** - Framework web Python
-- **PyPDF2** - Extração de texto de PDFs
-- **python-dotenv** - Gerenciamento de variáveis de ambiente
-- **requests** - Chamadas HTTP para APIs
-- **google-genai** - SDK do Google Gemini
-- **groq** - SDK do Groq (Llama 3.3)
-- **openai** - SDK da OpenAI (ChatGPT)
+- **Flask** - Python web framework
+- **PyPDF2** - PDF text extraction
+- **python-dotenv** - Environment variable management
+- **requests** - HTTP calls to APIs
+- **google-genai** - Google Gemini SDK
+- **groq** - Groq SDK (Llama 3.3)
+- **openai** - OpenAI SDK (ChatGPT)
 
-## 🔒 Segurança
+## 🔒 Security
 
-- Nunca commite o arquivo `.env` com suas chaves de API
-- Limite de tamanho de arquivo: 16MB
-- Arquivos temporários são deletados após processamento
-- Texto limitado a 15.000 caracteres para evitar limites de API
+- Never commit the `.env` file with your API keys
+- File size limit: 16MB
+- Temporary files are deleted after processing
+- Text limited to 15,000 characters to avoid API limits
 
-## 📝 Notas
+## 📝 Notes
 
-- Certifique-se de ter pelo menos uma chave de API configurada
-- PDFs com imagens podem não ter todo o texto extraído
-- O tempo de processamento varia conforme o tamanho do documento
+- Make sure at least one API key is configured
+- PDFs with images may not have all text extracted
+- Processing time varies depending on document size
 
 ## 🐛 Troubleshooting
 
-**Erro: "GROQ_API_KEY not configured"**
-- Verifique se adicionou a chave no arquivo `.env`
+**Error: "GROQ_API_KEY not configured"**
+- Check if you added the key to the `.env` file
 
-**Erro ao extrair texto do PDF**
-- Verifique se o PDF não está protegido ou corrompido
+**Error extracting text from PDF**
+- Make sure the PDF is not password-protected or corrupted
 
-**Erro de conexão com API**
-- Verifique sua conexão com a internet
-- Confirme se as chaves de API estão válidas
+**Error connecting to API**
+- Check your internet connection
+- Confirm your API keys are valid
